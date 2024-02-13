@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Моя Валентинка</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url(https://i.pinimg.com/originals/a6/a7/b2/a6a7b22f0204e0bd47ac1be00698395f.gif);
+            text-align: center;
+        }
+        .button-wrapper {
+    height: 300px;
+    padding: 50px;
+    border: 1px solid grey;
+    box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    position: relative;
+    }
+    #my-button {
+    position: absolute;
+    transition: all 0.07s linear 0s;
+    }
+        .valentine-card {
+            background-color: #ffcccc;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px auto;
+            max-width: 400px;
+        }
+        h1 {
+            color: #e60000;
+        }
+        p {
+            font-size: 18px;
+        }
+        .button-container {
+            margin-top: 20px;
+        }
+        .button {
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 8px;
+        }
+        .button1 {
+            background-color: #fb4a03;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 8px;
+        }
+        .button:hover {
+            background-color: #45a049;
+        }
+        .reject-button:hover {
+            animation: flee 1s infinite alternate;
+        }
+        @keyframes flee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50px); }
+        }
+    </style>
+</head>
+<body>
+    <div class="valentine-card">
+        <h1>С Днем Святого Валентина!</h1>
+        <p>Дорогая Анека, ты — моя радость и счастье. Желаю тебе много любви, улыбок и теплых объятий!</p>
+        <p>С любовью,</p>
+        <p>Auzane<3</p>
+       
+        <a href="index2.html" class="button" value="ДА!!!">Принять</a>
+            <span id="button1" style="position:relative;z-index:10" onmouseOver="moveIt()" onfocus="moveIt();this.blur()">
+            <button class="button1" onmouseDown="moveIt()" onmouseover="moveIt()" onfocus="moveIt();this.blur()">Отклонить</button>
+            </span>
+    </div>
+    <script>
+        function getObj(objID)
+        {
+            if (document.getElementById) {return document.getElementById(objID);}
+            else if (document.all) {return document.all[objID];}
+            else if (document.layers) {return document.layers[objID];}
+        }
+        var ie4=document.all;
+        var ns6=document.getElementById&&!document.all;
+        cobj=getObj("button1");
+        
+        function moveIt(){
+        y=Math.floor(Math.random()*301);
+        x=Math.floor(Math.random()*401);
+        if (ie4){
+            cobj.style.top  = y;
+            cobj.style.left = x;
+            }
+        else if (ns6){
+            cobj.style.top  = y+"px";
+            cobj.style.left = x+"px";
+            }
+        }
+        </script>
+</body>
+</html>
